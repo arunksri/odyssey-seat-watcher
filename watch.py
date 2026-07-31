@@ -47,7 +47,7 @@ THEATER_ID       = "207"
 THEATER_SLUG_URL = "https://www.cinemark.com/theatres/tx-dallas/cinemark-dallas-xd-and-imax"
 
 MOVIE_ID     = "104867"                    # The Odyssey — IMAX 70mm (from your URL)
-TARGET_TIMES = {"11:45:00", "15:30:00"}    # 11:30 am and 3:15 pm
+TARGET_TIMES = {"11:45:00", "15:30:00", "19:15:00"}    # 11:30 am and 3:15 pm
 
 # The theater is in Dallas (Central Time). "Today" and "already started" are
 # judged in this zone, NOT the GitHub runner's UTC.
