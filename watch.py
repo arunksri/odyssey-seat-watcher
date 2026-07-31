@@ -47,7 +47,7 @@ THEATER_ID       = "207"
 THEATER_SLUG_URL = "https://www.cinemark.com/theatres/tx-dallas/cinemark-dallas-xd-and-imax"
 
 MOVIE_ID     = "104867"                    # The Odyssey — IMAX 70mm (from your URL)
-TARGET_TIMES = {"11:30:00", "15:15:00"}    # 11:30 am and 3:15 pm
+TARGET_TIMES = {"11:45:00", "15:30:00"}    # 11:30 am and 3:15 pm
 
 # The theater is in Dallas (Central Time). "Today" and "already started" are
 # judged in this zone, NOT the GitHub runner's UTC.
@@ -64,8 +64,8 @@ SEASON_START = dt.date(2026, 7, 21)        # movie's first day (floor)
 # this many consecutive days (i.e. we've passed the booking horizon), then stops.
 # Using "any movie" — not just ours — means days our showtime doesn't play but
 # other films do are correctly walked past, not mistaken for the end of the run.
-STOP_AFTER_EMPTY_DAYS = 4
-MAX_LOOKAHEAD_DAYS    = 120                 # hard safety cap on how far to probe
+STOP_AFTER_EMPTY_DAYS = 120
+MAX_LOOKAHEAD_DAYS    = 180                 # hard safety cap on how far to probe
 
 # Seat filter: rows E through J, seat numbers 7 through 21.
 WANTED_ROWS = {"E", "F", "G", "H", "I", "J"}
@@ -84,7 +84,7 @@ WANTED_SEAT_TYPES = {"seat"}
 # this many dates per run, advancing through the horizon over successive runs. The
 # full horizon (~40+ days) refreshes every ~(horizon / DISCO_BATCH_DATES) runs, so
 # newly-added dates are picked up within one sweep (~30 min).
-DISCO_BATCH_DATES = 8
+DISCO_BATCH_DATES = 60
 
 # Adaptive sharding: seat maps are split into shards and one shard is checked per
 # run, alternating each 5-min tick. The shard COUNT is chosen automatically so a
